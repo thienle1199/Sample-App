@@ -3,6 +3,8 @@ require 'test_helper'
 class UsersIndexTest < ActionDispatch::IntegrationTest
  def setup
  	@user = users(:thienle)
+
+ 	@unactivated_user = users(:iron)
  end
 
 test "index including pagination" do
@@ -12,6 +14,7 @@ test "index including pagination" do
     assert_select 'ul.pagination', count: 2
     User.paginate(page: 1).each do |user|
       assert_select 'a[href=?]', user_path(user), text: user.name
+      
     end
   end
 end
