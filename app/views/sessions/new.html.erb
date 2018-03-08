@@ -7,6 +7,7 @@
 			<%= f.email_field :email, class: 'form-control' %>
 
 			<%= f.label :password %>
+			<%= link_to "(forgot password)", new_password_reset_path %>
 			<%= f.password_field :password, class: 'form-control' %>
 			<div class="form-check">
 				<%= f.label :remember_me, class: "form-check-label" do %>
@@ -20,4 +21,3 @@
 		<p>New user? <%= link_to "Sign Up", signup_path  %></p>
 	</div>
 </div>
-
