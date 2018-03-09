@@ -26,6 +26,7 @@ group :development do
   gem 'spring',                '2.0.2'
   gem 'spring-watcher-listen', '2.0.1'
   gem "awesome_print", require:"ap"
+  gem 'rubocop'
 end
 
 group :test do
