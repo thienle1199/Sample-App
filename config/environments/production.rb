@@ -64,14 +64,14 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   host = 'sampleapple.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
-  ActionMailer::Base.smtp_settings = {
-  :port           => 587,
-  :address        => "smtp.mailgun.org",
-  :domain         => ENV['mg_domain'],
-  :user_name      => ENV['mg_username'],
-  :password       => ENV['mg_password'],
-  :authentication => :plain,
-}
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :user_name            => ENV['thienle1144'],
+    :password             => ENV['875849Luong'],
+    :authentication       => "plain",
+    :enable_starttls_auto => true
+  }  
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.
