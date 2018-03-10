@@ -69,7 +69,7 @@ Rails.application.configure do
     :port                 => 587,
     :user_name            => ENV['thienle1144@gmail.com'],
     :password             => ENV['875849Luong'],
-    :authentication       => "plain",
+    :authentication       => :plain,
     :enable_starttls_auto => true
   }  
   config.action_mailer.perform_caching = false
