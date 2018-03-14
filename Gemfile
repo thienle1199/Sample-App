@@ -16,6 +16,8 @@ gem 'coffee-rails', '4.2.2'
 gem 'jquery-rails', '4.3.1'
 gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.7.0'
+gem 'carrierwave-dropbox', '2.0.0.rc1'
+
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
@@ -29,8 +31,8 @@ group :development do
   gem 'spring-watcher-listen', '2.0.1'
   gem "awesome_print", require:"ap"
   gem 'rubocop'
-  gem 'carrierwave-dropbox', '2.0.0.rc1'
-  
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :test do

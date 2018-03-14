@@ -1,0 +1,15 @@
+one:
+  follower: thienle
+  followed: lana
+
+two:
+  follower: thienle
+  followed: malory
+
+three:
+  follower: lana
+  followed: thienle
+
+four:
+  follower: archer
+  followed: thienle
