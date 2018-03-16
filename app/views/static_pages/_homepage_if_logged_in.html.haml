@@ -1,0 +1,9 @@
+%aside.col-md-4
+  %section.user_info
+    = render 'shared/user_info'
+  %section.micropost_form
+    = form_for @micropost do |f|
+      = render 'shared/error_messages', obj: @micropost
+      .field
+        = f.text_area :content, placeholder: "Compose new micropost..."
+      = f.submit 'Post', class: 'btn btn-primary'

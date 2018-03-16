@@ -25,8 +25,6 @@ Rails.application.configure do
 
     config.cache_store = :null_store
   end
-
-
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
@@ -34,8 +32,8 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
       :address              => "smtp.gmail.com",
       :port                 => 587,
-      :user_name            => ENV["GMAIL_USERNAME"],
-      :password             => ENV["GMAIL_PASSWORD"],
+      :user_name            => Rails.application.secrets.gmail_username,
+      :password             => Rails.application.secrets.gmail_password,
       :authentication       => :plain,
       :enable_starttls_auto => true
   }

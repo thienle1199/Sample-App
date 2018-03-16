@@ -1,0 +1,11 @@
+%html
+  %head
+    %title= full_title(yield(:title))
+    = render 'layouts/rails_default'
+  %body
+    = render 'layouts/navbar'
+    .container
+      = render 'shared/flash_messages'
+      = yield
+      = render 'layouts/footer'
+      = debug(params) if Rails.env.development?

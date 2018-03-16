@@ -1,0 +1,10 @@
+
+- provide(:title, 'Eidt user')
+%h1 Edit your account
+.row
+  .form-group.col-md-6.offset-md-3
+    = render 'shared/error_messages', obj: @user
+    = render 'shared/form'
+    .gravatar_edit
+      = gravatar_for @user
+      %a{:href => "http://gravatar.com/emails", :target => '_blank'} change
