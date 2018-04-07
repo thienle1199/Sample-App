@@ -1,7 +1,8 @@
 - provide(:title, 'Users')
 %h1 All Users
-= will_paginate
+
 %ul.users
+	= paginate @users
 	- @users.each do |user|
 		%li= render user
-= will_paginate
+	= paginate @users

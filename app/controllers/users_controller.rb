@@ -4,12 +4,12 @@ class UsersController < ApplicationController
   before_action :correct_user, only: %i[edit update]
   before_action :admin_user, only: :destroy
   def index
-    @users = User.where(activated: true).paginate(page: params[:page], per_page: 10)
+    @users = User.where(activated: true).page(params[:page]).per(10)
   end
 
   def show
     redirect_to(root_url) && return unless @user.activated?
-    @microposts = @user.microposts.paginate(page: params[:page], per_page: 10)
+    @microposts = @user.microposts.page(params[:page]).per(10)
   end
 
   def new
@@ -46,13 +46,13 @@ class UsersController < ApplicationController
 
   def following
     @title = 'Following'
-    @users = @user.following.paginate(page: params[:page], per_page: 10)
+    @users = @user.following.page(params[:page]).per(10)
     render 'show_follow'
   end
 
   def followers
     @title = 'Followers'
-    @users = @user.followers.paginate(page: params[:page], per_page: 10)
+    @users = @user.followers.page(params[:page]).per(10)
     render 'show_follow'
   end
 end

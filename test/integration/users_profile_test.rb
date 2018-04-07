@@ -13,7 +13,7 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
     assert_select 'h1>img.gravatar'
     assert_match @user.microposts.count.to_s, response.body
     assert_select 'ul.pagination'
-    @user.microposts.paginate(page: 1, per_page: 10).each do |micropost|
+    @user.microposts.page(1).per(10).each do |micropost|
       assert_match micropost.content, response.body
     end
   end

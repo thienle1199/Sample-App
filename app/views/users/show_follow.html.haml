@@ -20,8 +20,8 @@
             = link_to gravatar_for(user, size: 30), user
   .col-md-8
     %h3= @title
-    = will_paginate
+    = paginate @users
     - if @users.any?
       %ul.users.follow
         %li= render @users
-      = will_paginate
+      = paginate @users
