@@ -8,7 +8,7 @@ User.create!(name:  'Thien Le',
              activated_at: Time.zone.now)
 
 99.times do |n|
-  name  = Faker::OnePiece.unique.character
+  name  = Faker::GameOfThrones.unique.character
   email = "example-#{n + 1}@railstutorial.org"
   password = 'password'
   User.create!(name:  name,

@@ -10,12 +10,17 @@
         = @user.microposts.count
     %section.stats
       = render 'shared/stats'
-      - if @users.any?
+      - if @user.followers.any? && @title == 'Followers'
         .user_avatars
-          - @users.each do |user|
+          - @user.followers.each do |user|
+            = link_to gravatar_for(user, size: 30), user
+      - else @user.following.any? && @title == 'Following'
+        .user_avatars
+          - @user.following.each do |user|
             = link_to gravatar_for(user, size: 30), user
   .col-md-8
     %h3= @title
+    = will_paginate
     - if @users.any?
       %ul.users.follow
         %li= render @users

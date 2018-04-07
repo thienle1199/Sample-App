@@ -1,18 +1,21 @@
 %header
   .container
-    %nav.navbar.fixed-top.bg-dark.navbar-light
+    %nav.navbar.navbar-expand-lg.fixed-top.bg-dark.navbar-dark
       = link_to 'Sample Apple', root_path, id: 'logo'
-      %ul.nav.justify-content-end
-        %li.nav-item= link_to 'Home', root_path, class: 'nav-link disabled'
-        %li.nav-item= link_to 'Help', help_path, class: 'nav-link disabled'
-        - if logged_in?
-          %li.nav-item= link_to 'Users', users_path, class: 'nav-link disabled'
-          %li.dropdown.nav-link
-            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} Account
-            %ul.dropdown-menu
-              %li= link_to 'Profile', current_user, class: 'dropdown-item'
-              %li= link_to 'Setting', edit_user_path(current_user), class: 'dropdown-item'
-              %li.dropdown-divider
-              %li= link_to 'Log out', logout_path, method: :delete, class: 'dropdown-item'
-        - else 
-          %li.nav-item= link_to 'Log in', login_path, class: 'nav-link disabled'
+      %button.navbar-toggler{ type: 'button', 'data-toggle': 'collapse', 'data-target': '#navbarContent'  }
+        %span.navbar-toggler-icon
+      .collapse.navbar-collapse.justify-content-end#navbarContent  
+        %ul.navbar-nav
+          %li.nav-item= link_to 'Home', root_path, class: 'nav-link disabled'
+          %li.nav-item= link_to 'Help', help_path, class: 'nav-link disabled'
+          - if logged_in?
+            %li.nav-item= link_to 'Users', users_path, class: 'nav-link disabled'
+            %li.dropdown.nav-link
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} Account
+              %ul.dropdown-menu
+                %li= link_to 'Profile', current_user, class: 'dropdown-item'
+                %li= link_to 'Setting', edit_user_path(current_user), class: 'dropdown-item'
+                %li.dropdown-divider
+                %li= link_to 'Log out', logout_path, method: :delete, class: 'dropdown-item'
+          - else 
+            %li.nav-item= link_to 'Log in', login_path, class: 'nav-link disabled'
